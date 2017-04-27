@@ -264,6 +264,7 @@ public class SnapshotReader extends AbstractReader {
                 logger.info("\tsnapshot continuing with database(s): {}", includedDatabaseNames);
 
                 if (!isLocked) {
+                    /*
                     // ------------------------------------
                     // LOCK TABLES and READ BINLOG POSITION
                     // ------------------------------------
@@ -289,7 +290,7 @@ public class SnapshotReader extends AbstractReader {
                     metrics.globalLockAcquired();
                     isLocked = true;
                     tableLocks = true;
-
+                    */
                     // Our tables are locked, so read the binlog position ...
                     readBinlogPosition(step++, source, mysql, sql);
                 }
